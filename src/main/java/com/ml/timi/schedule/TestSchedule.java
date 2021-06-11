@@ -8,5 +8,21 @@
 
 package com.ml.timi.schedule;
 
+import org.joda.time.DateTimeUtils;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
+
+@Component
 public class TestSchedule {
+
+
+
+    public String dateNow = new Date().toString();
+    @Scheduled(fixedRate = 2000L)
+    public void TaskA(){
+        System.out.println("定时任务——————"+dateNow);
+        System.out.println(DateTimeUtils.currentTimeMillis());
+    }
 }

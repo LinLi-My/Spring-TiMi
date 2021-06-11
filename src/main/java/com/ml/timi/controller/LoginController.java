@@ -9,4 +9,24 @@
 package com.ml.timi.controller;
 
 public class LoginController {
+
+
+    public void r(){
+
+        //select
+
+
+        //去service插入数据1
+
+
+        //slelect
+
+
+        //逻辑
+
+
+        //去service插入数据2
+
+    }
+
 }
