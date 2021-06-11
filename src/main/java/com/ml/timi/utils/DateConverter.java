@@ -70,5 +70,6 @@ public class DateConverter implements Converter<String, Date> {
 
     public static void main(String[] args) {
         System.err.println(new DateConverter());
+
     }
 }
