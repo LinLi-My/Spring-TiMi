@@ -1,3 +1,74 @@
 #开发环境配置文件
 server:
   port: 28888
+  #spring.resources.static-locations = classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+spring:
+  web:
+    resources:
+        static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/templates/
+  devtools:
+    restart:
+      # exclude: application-dev.yml 指定文件不进行热部署
+      # trigger-file 改代码不重启，通过一个文本去控制
+      trigger-file: trigger.txt
+
+  messages:
+    basename: i18n/custom
+    datasource:
+      mysql:
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/kysy?useUnicode=true&characterEncoding=UTF-8 #数据库连接地址
+        username: root   #数据库用户名
+        password: root   #数据库连接密码
+        type: com.alibaba.druid.pool.DruidDataSource  #配置当前要使用的数据源的操作类型
+        driver-class-name: org.gjt.mm.mysql.Driver  #配置MySQL的驱动程序类
+        dbcp2: #进行数据库连接池的配置
+          min-idle: 5    #数据库连接池的最小维持连接数
+          initial-size: 5   #初始化提供的连接数
+          max-total: 5   #最大的连接数
+          max-wait-millis: 200   #等待连接获取的最大超时时间
+      sqlserver:
+        jdbc-url: jdbc:sqlserver://192.168.40.177:1433;DatabaseName=KY_SKZY_1020
+        username: sa
+        password: KYJT_yysygs177
+        #使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  freemarker:
+    # 是否开启thymeleaf缓存,本地为false，生产建议为true
+    cache: false
+    charset: UTF-8
+    allow-request-override: false
+    check-template-location: true
+
+    #类型
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    #文件后缀
+    suffix: .ftl
+    #路径
+    template-loader-path: classpath:/templates/
+
+  thymeleaf:
+    #开发时关闭缓存,不然没法看到实时页面
+    cache: false
+    mode: HTML5
+    #前缀
+    prefix: classpath:/templates/
+    #编码
+    encoding: utf-8
+    #类型
+    content-type: text/html
+    #后缀
+    suffix: .html
+
+
+
+
+
+
+
+
+
+

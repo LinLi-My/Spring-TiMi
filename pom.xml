@@ -38,6 +38,45 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- 引入freemarker模板引擎的依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- 引入原生JDBC驱动的依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!-- 引入原生Mysql驱动的依赖 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!-- 引入mybatis的依赖 -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.4</version>
+        </dependency>
+
+
+       <!-- <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.30</version>
+        </dependency>-->
+
+
     </dependencies>
 
     <build>
@@ -46,6 +85,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <!--
+                    必须添加这个配置
+                    1、fork 的含义：这里的 fork 设置为 true，实际上是会在 maven 编译的时候新创建一个虚拟机执行。这个新创建 JVM 就是这里的 fork。它速度会稍慢一些，但是隔离性非常好。
+                    2、默认情况下 ，fork 是 false，Maven 使用 运行自己的 jdk （maven 是需要依赖 jdk 存在的） 来进行 compiler ， 如果不想使用这个默认的 jvm，就可以通过 fork 来实现。fork 需要消耗更多的资源，以及花费更多的时间进行编译，所以如果开发机器性能不高，也应该 尽量避免 使用这种方式。
+                    -->
+                    <fork>true</fork>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>

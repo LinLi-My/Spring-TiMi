@@ -6,17 +6,16 @@
  */
 
 
-package com.ml.timi.schedule;
+package com.ml.timi.study.schedule;
 
 
 import com.ml.timi.utils.DateUtils;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Date;
 
-@Component
+//@Component
 public class TestSchedule {
 
 
